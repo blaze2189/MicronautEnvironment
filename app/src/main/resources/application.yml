@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: micronaut_docker
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:32768/docker
+    username: docker
+    password: docker
+    driverClassName: org.postgresql.Driver
+
+jpa:
+  default:
+    packages-to-scan:
+    - 'com.micronaut.docker.entity'
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
+        hbm2ddl:
+          auto: update

@@ -5,10 +5,14 @@ import com.micronaut.docker.exception.DataNotFoundException;
 import com.micronaut.docker.repository.AirportRepository;
 import com.micronaut.docker.service.IAirportService;
 import io.reactivex.Single;
+import io.reactivex.functions.Consumer;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Singleton
 public class AirportService implements IAirportService {
@@ -24,6 +28,12 @@ public class AirportService implements IAirportService {
     @Override
     public Airport addAirport(Airport airport){
         return airportRepository.save(airport);
+    }
+
+    @Override
+    public List<String> addAirport(List<Airport> airportList) {
+        airportRepository.saveAll(airportList);
+        return  airportList.stream().map(a->a.getAirportCd()).collect(Collectors.toList());
     }
 
     @Override

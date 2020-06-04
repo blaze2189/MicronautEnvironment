@@ -4,12 +4,8 @@ import com.micronaut.docker.entity.Airport;
 import com.micronaut.docker.service.IAirportService;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Body;
-import io.micronaut.http.annotation.Delete;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Post;
-import io.micronaut.http.annotation.Put;
+import io.micronaut.http.annotation.*;
+import io.reactivex.Single;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -31,9 +27,11 @@ public class AirportController {
         return HttpResponse.ok(airport);
     }
 
-    @Post(consumes = MediaType.APPLICATION_JSON, produces=MediaType.APPLICATION_JSON)
-    public HttpResponse<List> save(@Body List<Airport> airportList){
-        throw new RuntimeException("Not implemented yet");
+    @Post("/list")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public HttpResponse<List<String>> save(@Body List<Airport> airportList){
+       return HttpResponse.ok(airportService.addAirport(airportList));
     }
 
     @Put(consumes = MediaType.APPLICATION_JSON, produces = MediaType.APPLICATION_JSON)

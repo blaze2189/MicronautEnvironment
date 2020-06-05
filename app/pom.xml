@@ -38,12 +38,6 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <!--dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.200</version>
-            <scope>test</scope>
-        </dependency-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -154,8 +148,6 @@
                         <argument>-noverify</argument>
                         <argument>-XX:TieredStopAtLevel=1</argument>
                         <argument>-Dcom.sun.management.jmxremote</argument>
-
-
                         <argument>${exec.mainClass}</argument>
                     </arguments>
                 </configuration>

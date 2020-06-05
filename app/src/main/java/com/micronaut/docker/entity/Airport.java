@@ -12,6 +12,10 @@ import javax.persistence.Id;
 @Builder
 public class Airport {
 
+    {
+        System.out.println("Bean "+this.getClass().getName());
+    }
+
     @Id
     private String airportCd="";
     private String airportName;

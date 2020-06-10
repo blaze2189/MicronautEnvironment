@@ -17,7 +17,7 @@ public class AirportController {
     private IAirportService airportService;
 
     @Get(produces = MediaType.APPLICATION_JSON)
-    public HttpResponse<List> getAllCities() {
+    public HttpResponse<List> getAllAirports() {
         return HttpResponse.ok(airportService.getAllAirports());
     }
 
@@ -50,6 +50,5 @@ public class AirportController {
         Airport airport = airportService.getAirportByCode(airportCd);
         return HttpResponse.ok(airport);
     }
-
 
 }

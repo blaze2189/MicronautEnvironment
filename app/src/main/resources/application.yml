@@ -19,3 +19,7 @@ jpa:
           provider: none
         hbm2ddl:
           auto: update
+
+spring:
+  profiles:
+    active: #activatedProperties#

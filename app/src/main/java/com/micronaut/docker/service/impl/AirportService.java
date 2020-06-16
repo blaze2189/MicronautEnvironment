@@ -33,6 +33,7 @@ public class AirportService implements IAirportService {
     @Override
     public List<String> addAirport(List<Airport> airportList) {
         airportRepository.saveAll(airportList);
+
         return  airportList.stream().map(a->a.getAirportCd()).collect(Collectors.toList());
     }
 

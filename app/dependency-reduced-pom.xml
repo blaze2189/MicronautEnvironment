@@ -146,7 +146,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.5.0</version>
+      <version>5.6.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -166,7 +166,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.5.0</version>
+      <version>5.6.2</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -182,7 +182,7 @@
     <dependency>
       <groupId>io.micronaut.test</groupId>
       <artifactId>micronaut-test-junit5</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -204,7 +204,7 @@
     </dependencies>
   </dependencyManagement>
   <properties>
-    <micronaut.version>1.2.0</micronaut.version>
+    <micronaut.version>2.0.0</micronaut.version>
     <maven.compiler.target>${jdk.version}</maven.compiler.target>
     <exec.mainClass>com.micronaut.docker.Application</exec.mainClass>
     <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>

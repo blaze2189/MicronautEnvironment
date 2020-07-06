@@ -72,7 +72,9 @@ public class ReactiveService implements IReactiveAirportService {
             }
              return 1;
         });
-        result.put("status","doing");
+
+
+        result.put("status",future.isDone()?"done":"pending");
         return result;
     }
 

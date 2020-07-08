@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.micronaut.docker</groupId>
     <artifactId>app</artifactId>
-    <version>0.1</version>
+    <version>1.0</version>
     <parent>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-parent</artifactId>
@@ -73,6 +73,11 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>io.micronaut.data</groupId>
+        <artifactId>micronaut-data-hibernate-jpa</artifactId>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
           <version>1.18.12</version>
@@ -135,6 +140,12 @@
                 <groupId>io.micronaut</groupId>
                 <artifactId>micronaut-validation</artifactId>
                 <version>${micronaut.version}</version>
+              </path>
+              <path>
+                <groupId>io.micronaut.data</groupId>
+                <artifactId>micronaut-data-processor</artifactId>
+                <version>1.0.0</version>
+                <!--scope>compile</scope-->
               </path>
             </annotationProcessorPaths>
             <compilerArgs>

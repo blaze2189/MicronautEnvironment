@@ -1,6 +1,5 @@
 package com.micronaut.docker.exception.handler;
 
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.micronaut.docker.entity.Airport;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.http.HttpRequest;
@@ -14,11 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.inject.Singleton;
 import javax.persistence.PersistenceException;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Singleton

@@ -72,16 +72,42 @@
         <artifactId>junit-jupiter-engine</artifactId>
         <scope>test</scope>
       </dependency>
-      <dependency>
+      <!--<dependency>
         <groupId>io.micronaut.data</groupId>
         <artifactId>micronaut-data-hibernate-jpa</artifactId>
         <scope>compile</scope>
+      </dependency>-->
+      <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>javax.persistence-api</artifactId>
+        <version>2.2</version>
       </dependency>
+      <dependency>
+        <groupId>io.micronaut.data</groupId>
+        <artifactId>micronaut-data-processor</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.2.12</version>
+      </dependency>
+      <dependency>
+        <groupId>io.micronaut.configuration</groupId>
+        <artifactId>micronaut-jdbc-tomcat</artifactId>
+        <version>2.2.6</version>
+        <scope>runtime</scope>
+      </dependency>
+      <!--dependency>
+        <groupId>io.micronaut.sql</groupId>
+        <artifactId>micronaut-jdbc-hikari</artifactId>
+        <scope>runtime</scope>
+      </dependency-->
       <dependency>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
           <version>1.18.12</version>
-          <scope>provided</scope>
+          <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>io.micronaut.test</groupId>
@@ -133,12 +159,17 @@
             <annotationProcessorPaths>
               <path>
                 <groupId>io.micronaut</groupId>
-                <artifactId>micronaut-inject-java</artifactId>
+                <artifactId>micronaut-validation</artifactId>
                 <version>${micronaut.version}</version>
               </path>
               <path>
-                <groupId>io.micronaut</groupId>
-                <artifactId>micronaut-validation</artifactId>
+                  <groupId>org.projectlombok</groupId>
+                  <artifactId>lombok</artifactId>
+                  <version>1.18.12</version>
+              </path>
+              <path>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-inject-java</artifactId>
                 <version>${micronaut.version}</version>
               </path>
               <path>

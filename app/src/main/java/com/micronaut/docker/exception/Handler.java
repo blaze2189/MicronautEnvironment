@@ -13,10 +13,9 @@ import javax.inject.Singleton;
 
 import io.micronaut.http.HttpResponse;
 import lombok.NoArgsConstructor;
-import org.hibernate.exception.ConstraintViolationException;
 
 @Singleton
-@Requires(classes = {ConstraintViolationException.class, ExceptionHandler.class})
+@Requires(classes = { ExceptionHandler.class})
 public class Handler {
 
 

@@ -7,10 +7,13 @@ import io.micronaut.data.repository.CrudRepository;
 import java.util.List;
 
 @Repository
-public interface AirportRepository extends CrudRepository<Airport, Integer> {
+public interface AirportRepository extends CrudRepository<Airport, String> {
 
-
+    @Override
     List<Airport> findAll();
-    Airport findByAirportCd(String airportCD);
+  //  Airport findByAirportCd(String airportCd);
+
+    /*List<Airport> findAll();
+    Airport findByAirportCd(String airportCD);*/
 
 }

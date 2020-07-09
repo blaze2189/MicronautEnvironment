@@ -33,14 +33,14 @@ public class ReactiveService implements IReactiveAirportService {
     @Override
     public Maybe<Airport> getAirportByCd(String airportCd) {
         return Maybe.just(airportCd).subscribeOn(Schedulers.io()).
-                map(t -> airportRepository.findByAirportCd(airportCd));
+                map(t -> airportRepository.findById(airportCd).get());
     }
 
     @Override
     public void deleteAiport(String airportCd) {
         Maybe.just(airportCd).subscribeOn(Schedulers.io()).
                 map(cd -> {
-                    Airport airport = airportRepository.findByAirportCd(airportCd);
+                    Airport airport = airportRepository.findById(airportCd).get();
                     airportRepository.delete(airport);
                     return null;
                 });

@@ -9,6 +9,7 @@ import io.reactivex.functions.Consumer;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collector;
@@ -38,19 +39,19 @@ public class AirportService implements IAirportService {
 
     @Override
     public void deleteAirport(String ariportCd) {
-        Airport airport = airportRepository.findByAirportCd(ariportCd);
+        Airport airport = airportRepository.findById(ariportCd).get();
         isValidAirport(airport, ariportCd);
         airportRepository.delete(airport);
     }
 
     @Override
     public List<Airport> getAllAirports(){
-        return airportRepository.findAll();
+         return airportRepository.findAll();
     }
 
     @Override
     public Airport getAirportByCode(String airportCd) {
-        Airport airport = airportRepository.findByAirportCd(airportCd);
+        Airport airport = airportRepository.findById(airportCd).get();
         isValidAirport(airport, airportCd);
         return airport;
     }

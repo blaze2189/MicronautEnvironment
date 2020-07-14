@@ -1,0 +1,19 @@
+version: "2.2"
+services:
+  db:
+    build: ./postgres
+    ports:
+      - "32768:5432"
+    networks:
+      - micronaut
+  api:
+    build: ./java
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    networks:
+      - micronaut
+networks:
+  micronaut:
+    driver: "bridge"

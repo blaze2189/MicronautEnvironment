@@ -1,2 +1,0 @@
-CREATE TABLE airport (airport_cd varchar(4), airport_name varchar(80), airport_cty varchar(80),PRIMARY KEY (airport_cd));
-INSERT INTO airport VALUES ('MEX','Aeropuerto Internacional Benito Juárez','México');
